@@ -33,7 +33,7 @@ Finally, let $\bm{J}$ be the diagonal moment of inertia matrix and $\bm{\tau}_B$
 \end{equation}
 %
 The body torque $\bm{\tau}_B$ is represented by:
-\begin{equation}
+\begin{equation}\label{eq:body_torque}
 	\bm{\tau}_B = \begin{bmatrix}
 		-d_{x_0}&-d_{x_1}&d_{x_2}&d_{x_3}\\
 		d_{y_0}&-d_{y_1}&-d_{y_2}&d_{y_3}\\
@@ -80,7 +80,7 @@ The points: $\bm{p}_{C{L_1}}$ and $\bm{p}_{C{L_2}}$ are projected into the image
 		r = \left(v_1 - \frac{v_2 - v_1}{u_2 - u_1} u_1 \right) \sin\theta.
 \end{equation}
 We introduce a new variable $\bar{\bm{z}}$ in our MPC formulation:
-\begin{equation}
+\begin{equation}\label{eq:line_tracking_error}
 	\bm{z} = \left(\begin{array}{c}
 		\theta \\
 		r \\
@@ -109,7 +109,7 @@ The collision constraint is formulated as a probabilistic chance constraint to a
 % This is a convex representation that is suitable for modelling power masts.
 Let $a_{o}, b_{o}, c_{o}$ be the semi-principal axes of the ellipsoid modeling an obstacle, and $r$ the radius of a safety area around the quadrotor body frame. The quadrotor is considered to be in collision with the obstacle when:
 %
-\begin{equation}
+\begin{equation}\label{eq:collision_condition}
 C_{o} : \left(\mathbf{p}_{WB} - \mathbf{p}_{WO}\right)^\intercal\bm{\Omega}_{o}\left(\mathbf{p}_{WB} - \mathbf{p}_{WO}\right) \leq 1,
 \end{equation}
 %

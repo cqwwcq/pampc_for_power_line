@@ -73,6 +73,7 @@
 \newlabel{fig:reference_frames}{{2}{3}{Diagram of quadrotor and power line model.\relax }{figure.caption.4}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {III-B}Quadrotor Dynamics}{3}{subsection.3.2}\protected@file@percent }
 \newlabel{eq:dynamics}{{1}{3}{Quadrotor Dynamics}{equation.3.1}{}}
+\newlabel{eq:body_torque}{{2}{3}{Quadrotor Dynamics}{equation.3.2}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Illustration of a reference and detected line onto the image frame.\relax }}{3}{figure.caption.5}\protected@file@percent }
 \newlabel{fig:lineeval}{{3}{3}{Illustration of a reference and detected line onto the image frame.\relax }{figure.caption.5}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {III-C}MPC Formulation}{3}{subsection.3.3}\protected@file@percent }
@@ -93,7 +94,9 @@
 \citation{lucas1981iterative}
 \citation{kuhn1955hungarian}
 \newlabel{eq:cartesian_to_polar}{{5}{4}{Perception Objectives}{equation.3.5}{}}
+\newlabel{eq:line_tracking_error}{{6}{4}{Perception Objectives}{equation.3.6}{}}
 \newlabel{eq:collision_cost}{{7}{4}{Perception Objectives}{equation.3.7}{}}
+\newlabel{eq:collision_condition}{{8}{4}{Perception Objectives}{equation.3.8}{}}
 \newlabel{eq:cc}{{9}{4}{Perception Objectives}{equation.3.9}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces  {\color  {black} Overview of our learning-based power line detector and tracker. The detector takes a single RGB image as input and outputs end points of the detected power lines in pixel coordinates. The center patch of each detection is matched with the prediction of the previous patch using the Hungarian method\nobreakspace  {}\cite  {kuhn1955hungarian}. We use a KLT tracker\nobreakspace  {}\cite  {lucas1981iterative} to perform tracking. The final output is the tracked lines endpoints which are given to the MPC.}\relax }}{4}{figure.caption.6}\protected@file@percent }
 \newlabel{fig:perception}{{4}{4}{\iros {Overview of our learning-based power line detector and tracker. The detector takes a single RGB image as input and outputs end points of the detected power lines in pixel coordinates. The center patch of each detection is matched with the prediction of the previous patch using the Hungarian method~\cite {kuhn1955hungarian}. We use a KLT tracker~\cite {lucas1981iterative} to perform tracking. The final output is the tracked lines endpoints which are given to the MPC.}\relax }{figure.caption.6}{}}
