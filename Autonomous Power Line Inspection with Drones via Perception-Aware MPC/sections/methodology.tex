@@ -95,24 +95,20 @@ We introduce a new variable $\bar{\bm{z}}$ in our MPC formulation:
 \end{equation}
 
 The variable $d$ represents the distance of the line to the body frame (c.f. Fig.~\ref{fig:reference_frames}) and $d_s$ represents the \iros{target} value of $d$. \iros{The value of $d_s$ is set by the user according to the desired distance of the flight from the power lines.}
-\medskip
+
+
 \textbf{Obstacle Avoidance:}
 Inspired by~\cite{zhu2019chance,lin2020robust}, we include collision avoidance capabilities in our MPC by means of a collision cost and a collision constraint. The collision cost $l_{o}$ is formulated with the logistic function:
-%
 \begin{equation}\label{eq:collision_cost}
 	l_{o} = \mathcal{Q}_o/(1 + \text{exp}\!\left(\lambda_o\left(d_{o} - r_o\right)\right)),
 \end{equation}
-%
 where $d_{o}$ represents the norm of the distance of the body frame to the detected obstacle.
-The values ${Q}_o, \lambda_o, r_o$ are constant quantities that represent weight, smoothness, and distance threshold, respectively.\\
-The collision constraint is formulated as a probabilistic chance constraint to account for the uncertainty in the drone state and in the obstacle detection. The objective of this constraint is to ensure that the probability of the collision with an obstacle is less than a predefined threshold: $\text{Pr}\{C_{o}\} < \delta$. We model obstacles as ellipsoids.
-% This is a convex representation that is suitable for modelling power masts.
-Let $a_{o}, b_{o}, c_{o}$ be the semi-principal axes of the ellipsoid modeling an obstacle, and $r$ the radius of a safety area around the quadrotor body frame. The quadrotor is considered to be in collision with the obstacle when:
-%
+The values ${Q}_o, \lambda_o, r_o$ are constant quantities that represent weight, smoothness, and distance threshold, respectively.
+
+The collision constraint is formulated as a probabilistic chance constraint to account for the uncertainty in the drone state and in the obstacle detection. The objective of this constraint is to ensure that the probability of the collision with an obstacle is less than a predefined threshold: $\text{Pr}\{C_{o}\} < \delta$. We model obstacles as ellipsoids. Let $a_{o}, b_{o}, c_{o}$ be the semi-principal axes of the ellipsoid modeling an obstacle, and $r$ the radius of a safety area around the quadrotor body frame. The quadrotor is considered to be in collision with the obstacle when:
 \begin{equation}\label{eq:collision_condition}
 C_{o} : \left(\mathbf{p}_{WB} - \mathbf{p}_{WO}\right)^\intercal\bm{\Omega}_{o}\left(\mathbf{p}_{WB} - \mathbf{p}_{WO}\right) \leq 1,
-\end{equation}
-%
+\end{equation}%
 where $\bm{\Omega}_{o}$ is the uncertainty matrix defined as $\bm{\Omega}_{o} = \mathbf{R}_{WO}^\intercal\ \cdot \text{diag}\left(\frac{1}{\left(a_{o} + r\right)^2}, \, \frac{1}{\left(b_{o} + r\right)^2}, \, \frac{1}{\left(c_{o} + r\right)^2}\right) \cdot \mathbf{R}_{WO}$. The quantity \iros{$\mathbf{p}_{WO}$ and} $\mathbf{R}_{WO}$ represent the \iros{position and} orientation of the obstacle with respect to the world frame $W$. Assuming that the quadrotor and obstacle positions are random variables distributed according to Gaussian distributions: $\mathbf{p}_{WB}\sim\mathcal{N}(\hat{\mathbf{p}}_{WB}, \bm{\Sigma})$, and $\mathbf{p}_{WO}\sim\mathcal{N}(\hat{\mathbf{p}}_{WO}, \bm{\Sigma}_{o})$, respectively, we derive the deterministic form of the chance constraint as:
 %
 \begin{align}\label{eq:cc}
