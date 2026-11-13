@@ -1,0 +1,181 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%2345678901234567890123456789012345678901234567890123456789012345678901234567890
+%        1         2         3         4         5         6         7         8
+
+\documentclass[letterpaper, 10 pt, conference]{ieeeconf}  % Comment this line out if you need a4paper
+
+%\documentclass[a4paper, 10pt, conference]{ieeeconf}      % Use this line for a4 paper
+
+\IEEEoverridecommandlockouts                              % This command is only needed if 
+                                                          % you want to use the \thanks command
+
+\overrideIEEEmargins                                      % Needed to meet printer requirements.
+
+%In case you encounter the following error:
+%Error 1010 The PDF file may be corrupt (unable to open PDF file) OR
+%Error 1000 An error occurred while parsing a contents s\usepackage{nidanfloat}tream. Unable to analyze the PDF file.
+%This is a known problem with pdfLaTeX conversion filter. The file cannot be opened with acrobat reader
+%Please use one of the alternatives below to circumvent this error by uncommenting one or the other
+%\pdfobjcompresslevel=0
+%\pdfminorversion=4
+
+% See the \addtolength command later in the file to balance the column lengths
+% on the last page of the document
+
+% The following packages can be found on http:\\www.ctan.org
+%\usepackage{graphics} % for pdf, bitmapped graphics files
+%\usepackage{epsfig} % for postscript graphics files
+%\usepackage{mathptmx} % assumes new font selection scheme installed
+%\usepackage{times} % assumes new font selection scheme installed
+\usepackage{amsmath} % assumes amsmath package installed
+%\usepackage{amssymb}  % assumes amsmath package installed
+
+%% CProject related packages
+\usepackage{graphics} % for pdf, bitmapped graphics files
+\usepackage{epsfig} % for postscript graphics files
+\usepackage{times} % assumes new font selection scheme installed
+\usepackage{amsmath} % assumes amsmath package installed
+\usepackage{amssymb}  % assumes amsmath package installed
+\usepackage{hyperref} % for url links
+\usepackage{xcolor} % for text in colors
+\usepackage{arydshln} % dashlines in tables
+\usepackage{color} 
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{pifont}
+\usepackage[skip=0pt,font=footnotesize]{caption}
+% This will give a Warning because the caption pkg (loaded from the subcaption pkg) does not know the documentclass used here (Ref: https://stackoverflow.com/questions/69857293/latex-warning-with-caption)
+\usepackage{subcaption}
+\usepackage{bm}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+%\usepackage{nidanfloat}
+% Custom command
+%% Comments
+\newcommand{\davide}[1]{{\color{red} Davide: #1}}
+\newcommand{\giovanni}[1]{{\color{orange} Giovanni: #1}}
+\newcommand{\javier}[1]{{\color{yellow} Javier: #1}}
+\newcommand{\jiaxu}[1]{{\color{green} Jiaxu: #1}}
+\newcommand{\iros}[1]{{\color{black} #1}}
+
+% Added by Jiaxu for rendering quadrotor dynamics figure
+\newcommand{\wfr}[0]{\ensuremath{W}} % world frame
+\newcommand{\bfr}[0]{\ensuremath{B}} % body frame
+\newcommand{\cfr}[0]{\ensuremath{C}} % C-frame
+\newcommand{\pfr}[0]{\ensuremath{P}}
+\newcommand{\vect}[3]{{_{\mathsmaller{\mathrm{#2}}}\mathbf{#1}_{\mathsmaller{\mathrm{#3}}}}} % vector: _{#2}_{#1}_{#3}
+\newcommand{\heading}[0]{\psi}
+
+\newcommand{\rotateRPY}[3]% roll, pitch, yaw
+{   \pgfmathsetmacro{\rollangle}{#1}
+    \pgfmathsetmacro{\pitchangle}{#2}
+    \pgfmathsetmacro{\yawangle}{#3}
+
+    % to what vector is the x unit vector transformed, and which 2D vector is this?
+    \pgfmathsetmacro{\newxx}{cos(\yawangle)*cos(\pitchangle)}
+    \pgfmathsetmacro{\newxy}{sin(\yawangle)*cos(\pitchangle)}
+    \pgfmathsetmacro{\newxz}{-sin(\pitchangle)}
+    \path (\newxx,\newxy,\newxz);
+    \pgfgetlastxy{\nxx}{\nxy};
+
+    % to what vector is the y unit vector transformed, and which 2D vector is this?
+    \pgfmathsetmacro{\newyx}{cos(\yawangle)*sin(\pitchangle)*sin(\rollangle)-sin(\yawangle)*cos(\rollangle)}
+    \pgfmathsetmacro{\newyy}{sin(\yawangle)*sin(\pitchangle)*sin(\rollangle)+ cos(\yawangle)*cos(\rollangle)}
+    \pgfmathsetmacro{\newyz}{cos(\pitchangle)*sin(\rollangle)}
+    \path (\newyx,\newyy,\newyz);
+    \pgfgetlastxy{\nyx}{\nyy};
+
+    % to what vector is the z unit vector transformed, and which 2D vector is this?
+    \pgfmathsetmacro{\newzx}{cos(\yawangle)*sin(\pitchangle)*cos(\rollangle)+ sin(\yawangle)*sin(\rollangle)}
+    \pgfmathsetmacro{\newzy}{sin(\yawangle)*sin(\pitchangle)*cos(\rollangle)-cos(\yawangle)*sin(\rollangle)}
+    \pgfmathsetmacro{\newzz}{cos(\pitchangle)*cos(\rollangle)}
+    \path (\newzx,\newzy,\newzz);
+    \pgfgetlastxy{\nzx}{\nzy};
+}
+%Added by Jiaxu, some customized packages, new commands or operators
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+% Command to write a header to say "paper accepted at such conference"
+\definecolor{somegray}{rgb}{0.5, 0.5, 0.5}
+\newcommand{\darkgrayed}[1]{\textcolor{somegray}{#1}}
+\makeatletter
+\newcommand*\titleheader[1]{\gdef\@titleheader{#1}}
+\AtBeginDocument{%
+  \let\st@red@title\@title
+  \def\@title{%
+    \vskip-3em
+    \bgroup\normalfont\large\centering\@titleheader\par\egroup
+    \vskip1.5em\st@red@title}
+}
+% Modify the "\vskip-3em" above to place the the header higher or lower in the document
+\makeatother
+
+% Here goes the MESSAGE THAT YOU WANT TO APPEAR above the paper title
+\titleheader{\darkgrayed{This paper has been accepted for publication at the\\
+IEEE/RSJ International Conference on Intelligent Robots (IROS), Detroit, 2023.
+\copyright IEEE}}
+
+\title{\LARGE \bf
+Autonomous Power Line Inspection with Drones\\
+via Perception-Aware MPC
+}
+
+
+\author{Jiaxu Xing$^{*}$, Giovanni Cioffi$^{*}$, Javier Hidalgo-Carri\'o, and Davide Scaramuzza% <-this % stops a space
+    \thanks{$^{*}$ These authors contributed equally.
+    The authors are with the Robotics and Perception Group, Department of Informatics, University of Zurich, and Department of Neuroinformatics, University of Zurich and ETH Zurich, Switzerland (\protect\url{http://rpg.ifi.uzh.ch}). 
+    This work was supported by the Swiss National Science Foundation (SNSF) through the National Centre of Competence in Research (NCCR) Robotics, the European Union’s Horizon 2020 Research and Innovation Programme under grant agreement No. 871479 (AERIAL-CORE), and the European Research Council (ERC) under grant agreement No. 864042 (AGILEFLIGHT).
+    }% <-this % stops a space
+}
+
+
+\begin{document}
+\makeatletter
+\g@addto@macro\@maketitle{
+  \captionsetup{type=figure}\setcounter{figure}{0}
+  \def\mycolspace{1.2mm}
+  \centering
+    \includegraphics[trim=0.0 60.0 60.0 100.0, clip, width=2.0\columnwidth]{figures/eyecatcher_min.jpg}
+    \vspace{1.0ex}
+	\captionof{figure}{A quadrotor performing power line inspection in a power line test environment with three masts (labelled: A, B, and C) using our 
+	proposed approach. The original rough reference trajectory is depicted in yellow and the drone
+    deviates from it while avoiding obstacles (the power masts) and keeping the power line visible in the field
+    of view of the onboard camera.
+	\label{fig:catcheye}}
+}
+\makeatother
+\maketitle
+\thispagestyle{empty}
+\pagestyle{empty}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+
+Drones have the potential to revolutionize power line inspection by increasing productivity, reducing inspection time, improving data quality, and eliminating the risks for human operators.
+Current state-of-the-art systems for power line inspection have two shortcomings:
+(i) control is decoupled from perception and needs accurate information about the location of the power lines and masts;
+(ii) obstacle avoidance is decoupled from the power line tracking, which results in poor tracking in the vicinity of the power masts, and, consequently, in decreased data quality for visual inspection. 
+In this work, we propose a model predictive controller (MPC) that overcomes these limitations by tightly coupling perception and action.
+Our controller generates commands that maximize the visibility of the power lines while, at the same time, safely avoiding the power masts.
+For power line detection, we propose a lightweight learning-based detector that is trained only on synthetic data and is able to transfer zero-shot to real-world power line images.
+We validate our system in simulation and real-world experiments on a mock-up power line infrastructure.
+We release our code and datasets to the public.
+\end{abstract}
+%-------------------------------------------------------------------------
+% SECTIONS
+\input{sections/supplementary_material}
+\input{sections/introduction}
+\input{sections/related_work}
+\input{sections/methodology}
+\input{sections/experiments}
+\input{sections/conclusions}
+% \input{sections/acknowledgment}
+
+
+{\small
+\bibliographystyle{IEEEtran}
+\bibliography{all}
+}
+
+\end{document}

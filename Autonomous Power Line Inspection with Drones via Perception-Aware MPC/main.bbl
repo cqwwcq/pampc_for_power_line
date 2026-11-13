@@ -1,0 +1,305 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{#1}
+\csname url@rmstyle\endcsname
+\providecommand{\newblock}{\relax}
+\providecommand{\bibinfo}[2]{#2}
+\providecommand\BIBentrySTDinterwordspacing{\spaceskip=0pt\relax}
+\providecommand\BIBentryALTinterwordstretchfactor{4}
+\providecommand\BIBentryALTinterwordspacing{\spaceskip=\fontdimen2\font plus
+\BIBentryALTinterwordstretchfactor\fontdimen3\font minus
+  \fontdimen4\font\relax}
+\providecommand\BIBforeignlanguage[2]{{%
+\expandafter\ifx\csname l@#1\endcsname\relax
+\typeout{** WARNING: IEEEtran.bst: No hyphenation pattern has been}%
+\typeout{** loaded for the language `#1'. Using the pattern for}%
+\typeout{** the default language instead.}%
+\else
+\language=\csname l@#1\endcsname
+\fi
+#2}}
+
+\bibitem{DroneiiWP18}
+``Drone industry insights - drones in the energy industry: The energy drone
+  operator benchmark,'' \url{http://droneii.com}.
+
+\bibitem{eu}
+E.~Commission, ``Drone strategy 2.0: Creating a large-scale european drone
+  market,''
+  \url{https://ec.europa.eu/commission/presscorner/detail/en/ip_22_7076},
+  accessed: 2023-02-13.
+
+\bibitem{USEnergy}
+``U.s. electric system is made up of interconnections and balancing
+  authorities,'' \url{https://www.eia.gov/todayinenergy/detail.php?id=27152}.
+
+\bibitem{EUEnergy}
+``Power distribution in europe facts and figures,''
+  \url{https://cdn.eurelectric.org/media/1835/dso_report-web_final-2013-030-0764-01-e-h-D66B0486.pdf}.
+
+\bibitem{Wildfire}
+``California's second-largest wildfire was sparked when power lines came in
+  contact with a tree, cal fire says,''
+  \url{https://edition.cnn.com/2022/01/05/us/dixie-fire-power-lines-cause-pge}.
+
+\bibitem{DanishUAS2016}
+``Danmarks dronestrategi: Danish strategy for drone technology development and
+  use,'' \url{https://ufm.dk/publikationer/2016/filer/dronestrategi-2016.pdf}.
+
+\bibitem{jenssen2018automatic}
+V.~N. Nguyen, R.~Jenssen, and D.~Roverso, ``Automatic autonomous vision-based
+  power line inspection: A review of current status and the potential role of
+  deep learning,'' \emph{International Journal of Electrical Power \& Energy
+  Systems}, vol.~99, pp. 107--120, 2018.
+
+\bibitem{Falanga18iros}
+D.~Falanga, P.~Foehn, P.~Lu, and D.~Scaramuzza, ``Pampc: Perception-aware model
+  predictive control for quadrotors,'' in \emph{IEEE/RSJ Int. Conf. Intell.
+  Robot. Syst. (IROS)}, 2018, pp. 1--8.
+
+\bibitem{redmon2016you}
+J.~Redmon, S.~Divvala, R.~Girshick, and A.~Farhadi, ``You only look once:
+  Unified, real-time object detection,'' in \emph{Proceedings of the IEEE
+  conference on computer vision and pattern recognition}, 2016.
+
+\bibitem{takaya2019development}
+K.~Takaya, H.~Ohta, V.~Kroumov, K.~Shibayama, and M.~Nakamura, ``Development of
+  uav system for autonomous power line inspection,'' in \emph{2019 23rd
+  International Conference on System Theory, Control and Computing
+  (ICSTCC)}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2019, pp. 762--767.
+
+\bibitem{hui2017novel}
+X.~Hui, J.~Bian, Y.~Yu, X.~Zhao, and M.~Tan, ``A novel autonomous navigation
+  approach for uav power line inspection,'' in \emph{2017 IEEE International
+  Conference on Robotics and Biomimetics (ROBIO)}.\hskip 1em plus 0.5em minus
+  0.4em\relax IEEE, 2017, pp. 634--639.
+
+\bibitem{nasseri2018power}
+M.~Nasseri, H.~Moradi, S.~Nasiri, and R.~Hosseini, ``Power line detection and
+  tracking using hough transform and particle filter,'' in \emph{2018 6th RSI
+  International Conference on Robotics and Mechatronics (IcRoM)}.\hskip 1em
+  plus 0.5em minus 0.4em\relax IEEE, 2018, pp. 130--134.
+
+\bibitem{tian2015power}
+F.~Tian, Y.~Wang, and L.~Zhu, ``Power line recognition and tracking method for
+  uavs inspection,'' in \emph{2015 IEEE International Conference on Information
+  and Automation}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2015, pp.
+  2136--2141.
+
+\bibitem{gerke2014visual}
+M.~Gerke and P.~Seibold, ``Visual inspection of power lines by uas,'' in
+  \emph{2014 International Conference and Exposition on Electrical and Power
+  Engineering (EPE)}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2014, pp.
+  1077--1082.
+
+\bibitem{azevedo2019lidar}
+F.~Azevedo, A.~Dias, J.~Almeida, A.~Oliveira, A.~Ferreira, T.~Santos,
+  A.~Martins, and E.~Silva, ``Lidar-based real-time detection and modeling of
+  power lines for unmanned aerial vehicles,'' \emph{Sensors}, 2019.
+
+\bibitem{dietsche2021powerline}
+A.~Dietsche, G.~Cioffi, J.~Hidalgo-Carri{\'o}, and D.~Scaramuzza, ``Powerline
+  tracking with event cameras,'' in \emph{2021 IEEE/RSJ International
+  Conference on Intelligent Robots and Systems (IROS)}.\hskip 1em plus 0.5em
+  minus 0.4em\relax IEEE, 2021.
+
+\bibitem{gallego2020event}
+G.~Gallego, T.~Delbr{\"u}ck, G.~Orchard, C.~Bartolozzi, B.~Taba, A.~Censi,
+  S.~Leutenegger, A.~J. Davison, J.~Conradt, K.~Daniilidis, \emph{et~al.},
+  ``Event-based vision: A survey,'' \emph{IEEE transactions on pattern analysis
+  and machine intelligence}, vol.~44, no.~1, pp. 154--180, 2020.
+
+\bibitem{sun2021autonomous}
+S.~Sun, G.~Cioffi, C.~De~Visser, and D.~Scaramuzza, ``Autonomous quadrotor
+  flight despite rotor failure with onboard vision sensors: Frames vs.
+  events,'' \emph{IEEE Robotics and Automation Letters}, vol.~6, no.~2, pp.
+  580--587, 2021.
+
+\bibitem{tordesillas2022panther}
+J.~Tordesillas and J.~P. How, ``Panther: Perception-aware trajectory planner in
+  dynamic environments,'' \emph{IEEE Access}, vol.~10, 2022.
+
+\bibitem{wang2021autonomous}
+Y.~Wang, J.~Ji, Q.~Wang, C.~Xu, and F.~Gao, ``Autonomous flights in dynamic
+  environments with onboard vision,'' in \emph{IEEE/RSJ Int. Conf. Intell.
+  Robot. Syst. (IROS)}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2021, pp.
+  1966--1973.
+
+\bibitem{nguyen2021model}
+H.~Nguyen, M.~Kamel, K.~Alexis, and R.~Siegwart, ``Model predictive control for
+  micro aerial vehicles: A survey,'' in \emph{2021 European Control Conference
+  (ECC)}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2021, pp. 1556--1563.
+
+\bibitem{sun2022comparative}
+S.~Sun, A.~Romero, P.~Foehn, E.~Kaufmann, and D.~Scaramuzza, ``A comparative
+  study of nonlinear mpc and differential-flatness-based control for quadrotor
+  agile flight,'' \emph{IEEE Transactions on Robotics}, 2022.
+
+\bibitem{paneque2022perception}
+J.~L. Paneque, J.~R. Mart{\'\i}nez-de Dios, A.~Ollero, D.~Hanover, S.~Sun,
+  A.~Romero, and D.~Scaramuzza, ``Perception-aware perching on powerlines with
+  multirotors,'' \emph{IEEE Robotics and Automation Letters}, vol.~7, no.~2,
+  pp. 3077--3084, 2022.
+
+\bibitem{romero2022model}
+A.~Romero, S.~Sun, P.~Foehn, and D.~Scaramuzza, ``Model predictive contouring
+  control for time-optimal quadrotor flight,'' \emph{IEEE Transactions on
+  Robotics}, 2022.
+
+\bibitem{schwarm1999chance}
+A.~T. Schwarm and M.~Nikolaou, ``Chance-constrained model predictive control,''
+  \emph{AIChE Journal}, vol.~45, no.~8, pp. 1743--1752, 1999.
+
+\bibitem{lin2020robust}
+J.~Lin, H.~Zhu, and J.~Alonso-Mora, ``Robust vision-based obstacle avoidance
+  for micro aerial vehicles in dynamic environments,'' in \emph{2020 IEEE
+  International Conference on Robotics and Automation (ICRA)}.\hskip 1em plus
+  0.5em minus 0.4em\relax IEEE, 2020, pp. 2682--2688.
+
+\bibitem{penin2018vision}
+B.~Penin, P.~R. Giordano, and F.~Chaumette, ``Vision-based reactive planning
+  for aggressive target tracking while avoiding collisions and occlusions,''
+  \emph{{IEEE} Robot. Autom. Lett.}, vol.~3, no.~4, 2018.
+
+\bibitem{diehl2006fast}
+M.~Diehl, H.~G. Bock, H.~Diedam, and P.-B. Wieber, ``Fast direct multiple
+  shooting algorithms for optimal robot control,'' in \emph{Fast motions in
+  biomechanics and robotics}.\hskip 1em plus 0.5em minus 0.4em\relax Springer,
+  2006, pp. 65--93.
+
+\bibitem{houska2011acado}
+B.~Houska, H.~J. Ferreau, and M.~Diehl, ``Acado toolkit—an open-source
+  framework for automatic control and dynamic optimization,'' \emph{Optimal
+  Control Applications and Methods}, 2011.
+
+\bibitem{ferreau2014qpoases}
+H.~J. Ferreau, C.~Kirches, A.~Potschka, H.~G. Bock, and M.~Diehl, ``qpoases: A
+  parametric active-set algorithm for quadratic programming,''
+  \emph{Mathematical Programming Computation}, vol.~6, no.~4, 2014.
+
+\bibitem{Szeliski10book}
+R.~Szeliski, \emph{Computer Vision: Algorithms and Applications}, ser. Texts in
+  Computer Science.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 2010.
+
+\bibitem{zhu2019chance}
+H.~Zhu and J.~Alonso-Mora, ``Chance-constrained collision avoidance for mavs in
+  dynamic environments,'' \emph{IEEE Robotics and Automation Letters}, vol.~4,
+  no.~2, pp. 776--783, 2019.
+
+\bibitem{Barfoot15book}
+T.~D. Barfoot, \emph{State Estimation for Robotics - A Matrix Lie Group
+  Approach}.\hskip 1em plus 0.5em minus 0.4em\relax Cambridge University Press,
+  2015.
+
+\bibitem{glenn_jocher_2022_7002879}
+\BIBentryALTinterwordspacing
+G.~Jocher, A.~Chaurasia, A.~Stoken, J.~Borovec, NanoCode012, Y.~Kwon, TaoXie,
+  K.~Michael, J.~Fang, imyhxy, Lorna, C.~Wong, Z.~Yifu, A.~V, D.~Montes,
+  Z.~Wang, C.~Fati, J.~Nadar, Laughing, UnglvKitDe, tkianai, yxNONG,
+  P.~Skalski, A.~Hogan, M.~Strobel, M.~Jain, L.~Mammana, and xylieong,
+  ``ultralytics/yolov5: v6.2 - yolov5 classification models, apple m1,
+  reproducibility, clearml and deci.ai integrations,'' 2022. [Online].
+  Available: \url{https://doi.org/10.5281/zenodo.7002879}
+\BIBentrySTDinterwordspacing
+
+\bibitem{kuhn1955hungarian}
+H.~W. Kuhn, ``The hungarian method for the assignment problem,'' \emph{Naval
+  research logistics quarterly}, vol.~2, no. 1-2, pp. 83--97, 1955.
+
+\bibitem{lucas1981iterative}
+B.~D. Lucas and T.~Kanade, ``An iterative image registration technique with an
+  application to stereo vision,'' in \emph{IJCAI'81: 7th international joint
+  conference on Artificial intelligence}, vol.~2, 1981, pp. 674--679.
+
+\bibitem{zhang2019detecting}
+H.~Zhang, W.~Yang, H.~Yu, H.~Zhang, and G.-S. Xia, ``Detecting power lines in
+  uav images with convolutional features and structured constraints,''
+  \emph{Remote Sensing}, vol.~11, no.~11, p. 1342, 2019.
+
+\bibitem{abdelfattah2020ttpla}
+R.~Abdelfattah, X.~Wang, and S.~Wang, ``Ttpla: An aerial-image dataset for
+  detection and segmentation of transmission towers and power lines,'' in
+  \emph{Proceedings of the Asian Conference on Computer Vision}, 2020.
+
+\bibitem{song2021flightmare}
+Y.~Song, S.~Naji, E.~Kaufmann, A.~Loquercio, and D.~Scaramuzza, ``Flightmare: A
+  flexible quadrotor simulator,'' in \emph{Conference on Robot Learning}.\hskip
+  1em plus 0.5em minus 0.4em\relax PMLR, 2021, pp. 1147--1157.
+
+\bibitem{oleynikova2015reactive}
+H.~Oleynikova, D.~Honegger, and M.~Pollefeys, ``Reactive avoidance using
+  embedded stereo vision for mav flight,'' in \emph{2015 IEEE International
+  Conference on Robotics and Automation (ICRA)}.\hskip 1em plus 0.5em minus
+  0.4em\relax IEEE, 2015.
+
+\bibitem{foehn2022agilicious}
+P.~Foehn, E.~Kaufmann, A.~Romero, R.~Penicka, S.~Sun, L.~Bauersfeld,
+  T.~Laengle, G.~Cioffi, Y.~Song, A.~Loquercio, \emph{et~al.}, ``Agilicious:
+  Open-source and open-hardware agile quadrotor for vision-based flight,''
+  \emph{Science Robotics}, vol.~7, no.~67, p. eabl6259, 2022.
+
+\bibitem{illingworth1988survey}
+J.~Illingworth and J.~Kittler, ``A survey of the hough transform,''
+  \emph{Computer vision, graphics, and image processing}, vol.~44, no.~1, 1988.
+
+\bibitem{bao2005canny}
+P.~Bao, L.~Zhang, and X.~Wu, ``Canny edge detection enhancement by scale
+  multiplication,'' \emph{IEEE transactions on pattern analysis and machine
+  intelligence}, vol.~27, no.~9, pp. 1485--1490, 2005.
+
+\bibitem{zhao2021deep}
+K.~Zhao, Q.~Han, C.-B. Zhang, J.~Xu, and M.-M. Cheng, ``Deep hough transform
+  for semantic line detection,'' \emph{IEEE Transactions on Pattern Analysis
+  and Machine Intelligence}, 2021.
+
+\bibitem{pan2018spatial}
+X.~Pan, J.~Shi, P.~Luo, X.~Wang, and X.~Tang, ``Spatial as deep: Spatial cnn
+  for traffic scene understanding,'' in \emph{Proceedings of the AAAI
+  Conference on Artificial Intelligence}, vol.~32, no.~1, 2018.
+
+\bibitem{tabelini2021keep}
+L.~Tabelini, R.~Berriel, T.~M. Paixao, C.~Badue, A.~F. De~Souza, and
+  T.~Oliveira-Santos, ``Keep your eyes on the lane: Real-time attention-guided
+  lane detection,'' in \emph{Proceedings of the IEEE/CVF conference on computer
+  vision and pattern recognition}, 2021, pp. 294--302.
+
+\bibitem{liu2021condlanenet}
+L.~Liu, X.~Chen, S.~Zhu, and P.~Tan, ``Condlanenet: a top-to-down lane
+  detection framework based on conditional convolution,'' in \emph{Proceedings
+  of the IEEE/CVF International Conference on Computer Vision}, 2021, pp.
+  3773--3782.
+
+\bibitem{li2019line}
+X.~Li, J.~Li, X.~Hu, and J.~Yang, ``Line-cnn: End-to-end traffic line detection
+  with line proposal unit,'' \emph{IEEE Transactions on Intelligent
+  Transportation Systems}, vol.~21, no.~1, pp. 248--258, 2019.
+
+\bibitem{chen2019pointlanenet}
+Z.~Chen, Q.~Liu, and C.~Lian, ``Pointlanenet: Efficient end-to-end cnns for
+  accurate real-time lane detection,'' in \emph{2019 IEEE intelligent vehicles
+  symposium (IV)}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2019, pp.
+  2563--2568.
+
+\bibitem{cioffi2023hdvio}
+G.~Cioffi, L.~Bauersfeld, and D.~Scaramuzza, ``Hdvio: Improving localization
+  and disturbance estimation with hybrid dynamics vio,'' \emph{Robotics:
+  Science and Systems}, 2023.
+
+\bibitem{bauersfeld2021neurobem}
+L.~Bauersfeld, E.~Kaufmann, P.~Foehn, S.~Sun, and D.~Scaramuzza, ``Neurobem:
+  Hybrid aerodynamic quadrotor model,'' \emph{Robotics: Science and Systems},
+  2021.
+
+\bibitem{sun2022see}
+B.~Sun, J.~Xing, H.~Blum, R.~Siegwart, and C.~Cadena, ``See yourself in others:
+  Attending multiple tasks for own failure detection,'' in \emph{2022
+  International Conference on Robotics and Automation (ICRA)}.\hskip 1em plus
+  0.5em minus 0.4em\relax IEEE, 2022, pp. 8409--8416.
+
+\bibitem{kitchen2020design}
+R.~Kitchen, N.~Bierwolf, S.~Harbertson, B.~Platt, D.~Owen, K.~Griessmann, and
+  M.~A. Minor, ``Design and evaluation of a perching hexacopter drone for
+  energy harvesting from power lines,'' in \emph{2020 IEEE/RSJ International
+  Conference on Intelligent Robots and Systems (IROS)}.\hskip 1em plus 0.5em
+  minus 0.4em\relax IEEE, 2020, pp. 1192--1198.
+
+\end{thebibliography}

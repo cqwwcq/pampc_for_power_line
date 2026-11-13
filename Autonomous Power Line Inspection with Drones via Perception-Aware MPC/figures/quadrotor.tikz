@@ -1,0 +1,93 @@
+\tdplotsetmaincoords{65}{30}
+\begin{tikzpicture}[tdplot_main_coords, >=latex]
+\tikzset{RPY/.style={x={(\nxx,\nxy)},y={(\nyx,\nyy)},z={(\nzx,\nzy)}}}
+\def\propz{0.5}
+\def\propx{2.4}
+\def\propy{2.2}
+\def\r{1}
+\def\l{1.2}
+\def\f{0.8}
+\def\c{0.8}
+\def\x{0}
+\rotateRPY{-10}{20}{0}
+\begin{scope}[RPY]
+% frame
+\draw[] (-\propx-\x,0,0) -- (\propx-\x,0,0);
+\draw[] (-\x,-\propy,0) -- (-\x,\propy,0);
+% rotors
+\draw[draw=none, fill=black, opacity=0.15] (0-\x,\propy,\propz) circle (\r);
+\draw[draw=none, fill=black, opacity=0.15] (\propx-\x,0,\propz) circle (\r) ;
+\draw[draw=none, fill=black, opacity=0.15] (0-\x,-\propy,\propz) circle (\r) ;
+\draw[draw=none, fill=black, opacity=0.15] (-\propx-\x,0,\propz) circle (\r) ;
+\draw (-\x,\propy,0) --++ (0,0,\propz) node[right] {4};
+\draw (\propx -\x,0,0) --++ (0,0,\propz) node[right] {2};
+\draw (-\x,-\propy,0) --++ (0,0,\propz) node[right] {1};
+\draw (-\propx -\x,0,0) --++ (0,0,\propz) node[left] {3};
+% forces
+\draw[thick,->] (-\x,\propy,\propz) -- ++(0,0,\f);
+\draw[thick,->] (\propx-\x,0,\propz) -- ++(0,0,\f);
+\draw[thick,->] (-\x,-\propy,\propz) -- ++(0,0,\f);
+\draw[thick,->] (-\propx-\x,0,\propz) -- ++(0,0,\f);    
+
+% propeller rotation
+\def\psi{60}
+\def\xa{30}
+\def\xb{0}
+\def\xc{-90}
+\def\xd{210}
+\path (\r-\x,\propy,\propz) arc (0:\xa:\r) coordinate (a);
+\draw [->] (a) arc (\xa:\xa-\psi:\r) [draw=black] ;
+\path (\propx-\x,\r,\propz) arc (90:\xb:\r) coordinate (b);
+\draw [->] (b) arc (\xb:\xb+\psi:\r) [draw=black] ;
+\path (\r-\x,-\propy,\propz) arc (0:\xc:\r) coordinate (c);
+\draw [->] (c) arc (\xc:\xc-\psi:\r) [draw=black] ;
+\path (-\propx-\x,\r,\propz)  arc (90:\xd:\r) coordinate (d);
+\draw [->] (d) arc (\xd:\xd+\psi:\r) [draw=black] ;
+% quad frame
+\rotateRPY{0}{0}{45}
+\begin{scope}[RPY]
+\draw[->,color=red,text=black] (-\x,0,0) -- ++ (\l,0,0) node[above] {$\bm x_\bfr$};
+\draw[->,color=green,text=black] (-\x,0,0) -- ++ (0,\l,0) node[above] {$\bm y_\bfr$};  
+\draw[->,color=blue,text=black] (-\x,0,0) -- ++ (0,0,\l) node[left] {$\bm z_\bfr$};     
+\rotateRPY{0}{25}{0}
+
+% camera frame
+\begin{scope}[RPY, xshift=3.5cm, yshift=-0.75cm]
+\draw[->,color=red,text=black] (-\x,0,0) -- ++ (\l,0,0) node[left=1] {$\bm x_C$};
+\draw[->,color=green,text=black](-\x,0,0) -- ++ (0,\l,0) node[above] {$\bm y_C$};  
+\draw[->,color=blue,text=black] (-\x,0,0) -- ++ (0,0,\l) node[left=1] {$\bm z_C$}; 
+\end{scope}
+
+%draw the angle arc
+\draw[densely dotted](4.6,0,0) arc (0:-45:0.8) node[right=3] {$30^{\circ}$};
+
+% connect center of body and camera
+\draw[dotted]{(0, 0, 0) --++ (5.3, 0, 0)};
+
+\end{scope}
+\end{scope}
+
+% world frame
+\begin{scope}[xshift=-3cm, yshift=-2cm]
+\draw[->,color=red,text=black] (-\x,0,0) -- ++ (\l,0,0) node[right] {$\bm x_\wfr$};
+\draw[->,color=green,text=black] (-\x,0,0) -- ++ (0,\l,0) node[above] {$\bm y_\wfr$};  
+\draw[->,color=blue,text=black] (-\x,0,0) -- ++ (0,0,\l) node[left] {$\bm z_\wfr$};
+
+% draw a power line
+\draw[->]{(0, 0, -1) --++ (8.5, 0, 0)} node[right=3]{};
+\node at (5.5, 0, -0.25) [canvas is xz plane at y=0] {Power line detection};
+
+% draw two points
+\rotateRPY{0}{0}{0}
+\draw[fill=black](1, 0, -1) circle (0.15) node[below=2] {$\bm{p}_{WL_1}$};
+\draw[fill=black](7.5, 0, -1) circle (0.15) node[below=2] {$\bm{p}_{WL_2}$};
+\end{scope}
+\draw{(0, 0, -3.32+0.2-0.7) --++ (0.2, 0, 0)};
+\draw{(0.2, 0, -3.32+0.2-0.7) --++ (0, 0, -0.2)};
+\draw[dotted]{(0, 0, 0) --++ (0, 0, -4)};
+\draw[thick,->,color=black,text=black] (-\x,0,0) -- node[below right] {$\bm g_\wfr$} ++ (0,0,-2*\f);
+
+% Yaw
+% \draw[thin,->] (-1.0,-1,-0.5) arc (0:45:0.5) node[midway, right] {$\heading$};
+% gravity
+\end{tikzpicture}

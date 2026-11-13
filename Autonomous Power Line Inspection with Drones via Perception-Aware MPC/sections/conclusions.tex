@@ -1,0 +1,14 @@
+\section{Conclusions} \label{sec:Conclusions}
+
+In this work, we present a system for autonomous power line inspection using perception-aware MPC. 
+Our approach generates control commands that maximize the visibility of the power lines while safely avoiding the power masts.
+Our MPC formulation includes two perception objectives, one for line tracking and one for obstacle avoidance. 
+The MPC adapts the weights of these two objectives online.
+\iros{To detect the power lines, we propose a novel learning-based detector.
+This learning-based detector is only trained on synthetic data and is able to transfer to real-world images without any fine-tuning.}
+We show that our system is robust to unknown information on the position of the power lines and power masts.
+We also show that our perception-aware MPC improves power line visibility by 40\%.
+We demonstrate a real-world application in a mock-up power line environment.
+Future improvements for our system might include i) improving system robustness against disturbances such as wind~\cite{cioffi2023hdvio}, model mismatch~\cite{bauersfeld2021neurobem} or sensor failures~\cite{sun2022see} and ii) perching on the power
+line~\cite{paneque2022perception} in order to recharge the battery on the 
+fly~\cite{kitchen2020design}.

@@ -1,0 +1,27 @@
+\section{Related Work} 
+An overview of prior works in aerial power line inspection using drones is in~\cite{jenssen2018automatic}.
+Planning and control strategies are presented in~\cite{takaya2019development,hui2017novel}.
+A PID controller to control the position and orientation of a quadrotor in relation to the power lines is proposed in~\cite{takaya2019development}. 
+The solution proposed in~\cite{hui2017novel} uses perspective relation and estimation of the position of the next tower to guide the drone.
+Both works loosely couple perception, planning, and control and consequently either need to have access to an accurate reference trajectory or could result in poor line tracking after the collision avoidance maneuver. 
+A number of works~\cite{nasseri2018power,tian2015power, gerke2014visual, azevedo2019lidar, dietsche2021powerline} focus on the perception task of detecting and tracking the power lines.
+Model-based approaches, such as variants of Hough transform and filters, using cameras are proposed in~\cite{nasseri2018power,tian2015power, gerke2014visual}.
+In spite of their high weight and computational load, Lidars could also be employed in some specific situations as proposed in~\cite{azevedo2019lidar}.
+Event camera~\cite{gallego2020event} is a novel sensor that provides lower latency and higher dynamic range measurements than standard cameras.
+Combining events and standard frames can make robotic perception more robust against motion blur and low light conditions~\cite{sun2021autonomous}.
+In~\cite{dietsche2021powerline}, a solution is proposed to detect and track the power lines using event data.
+
+\iros{Extensive literature exists on obstacle avoidance methods for quadrotor flights.
+However, state-of-the-art methods~\cite{tordesillas2022panther, wang2021autonomous} cannot directly be applied to the power line inspection problem because they neglect the objective of tracking visual points of interest, such as the power lines.}
+
+Model predictive control~\cite{nguyen2021model} is a powerful solution to couple planning and control for quadrotor autonomous flights.
+The benefits of MPC compared to other control strategies are analyzed in~\cite{sun2022comparative}.
+MPC has been used for perching on power lines~\cite{paneque2022perception} and agile flights~\cite{romero2022model}.
+The first work introducing perception awareness in MPC is~\cite{Falanga18iros} where the authors propose to include a perception objective in the MPC to keep a point of interest in the camera field of view.
+Our MPC controller is inspired by~\cite{Falanga18iros}. 
+However, we deal with two different perception objectives, line tracking, and collision avoidance, which conflict with each other when the drone approaches the power masts.
+\iros{To enable collision avoidance capabilities, in~\cite{schwarm1999chance}, the authors utilized a chance-constrained MPC formulation. This probabilistic collision constraint allows to account for the perceptual uncertainty and consequently enhances the obstacle avoidance robustness.
+In~\cite{lin2020robust}, it is shown a real-world application of the chance-constrained MPC for dynamic obstacle avoidance.}
+\iros{In~\cite{penin2018vision}, an MPC-based reactive planner for visual target tracking and obstacle avoidance is presented.
+Different from our method, this MPC does not directly generate control commands but planned trajectories, which are tracked by another low-level controller.}
+
