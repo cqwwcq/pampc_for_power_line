@@ -16,46 +16,31 @@
 % \end{itemize}
 
 %What is the problem?
-Drones exhibit the potential to bring about a revolutionary transformation in the industrial inspection market~\cite{DroneiiWP18, eu}. 
-Particularly, quadrotors are a fast-to-deploy and cost-effective solution for power line inspection. 
-The EU and US power systems consist of more than 10 million km of power lines and distribution transformers, which connect more than 400 million customers~\cite{USEnergy, EUEnergy}.
-The power line infrastructure needs to be inspected regularly to avoid power outages and natural disasters (California's second-largest wildfire was sparked when power lines came in contact with a tree~\cite{Wildfire}).
+Drones exhibit the potential to bring about a revolutionary transformation in the industrial inspection market~\cite{DroneiiWP18, eu}. Particularly, quadrotors are a fast-to-deploy and cost-effective solution for power line inspection. The EU and US power systems consist of more than 10 million km of power lines and distribution transformers, which connect more than 400 million customers~\cite{USEnergy, EUEnergy}. The power line infrastructure needs to be inspected regularly to avoid power outages and natural disasters (California's second-largest wildfire was sparked when power lines came in contact with a tree~\cite{Wildfire}).
 
-Power line inspection requires teams of specialized human labor who use ad-hoc equipment, such as ropes and scaffoldings, to access the power line infrastructure and manned helicopters for long-range operations. 
-These factors result in high expenses, significant dangers for human operators, and low productivity in the inspection operation. 
+Power line inspection requires teams of specialized human labor who use ad-hoc equipment, such as ropes and scaffoldings, to access the power line infrastructure and manned helicopters for long-range operations. These factors result in high expenses, significant dangers for human operators, and low productivity in the inspection operation.
 %Why is it important?
-Quadrotors can cut the costs by $50\%$~\cite{DroneiiWP18} as a consequence of the increase of productivity, the reduction of the inspection time, the improvement of the data quality, and the elimination of the risks for the human operators~\cite{DanishUAS2016}. 
+Quadrotors can cut the costs by $50\%$~\cite{DroneiiWP18} as a consequence of the increase of productivity, the reduction of the inspection time, the improvement of the data quality, and the elimination of the risks for the human operators~\cite{DanishUAS2016}.
 
 %Why is the problem hard? What makes it challenging?
-Power line inspection with drones is still done by skilled pilots.
-The use of autonomous drones is still limited. 
-Developing a fully autonomous solution is challenging because the drone needs to take decisions during the flight that are affected by conflicting goals: the drone needs to fly close to the power lines to maximize the data quality for visual inspection starting from a rough knowledge of the reference trajectory, and at the same time, it must avoid collisions with the power lines and masts, for which precise location information is unavailable.
+Power line inspection with drones is still done by skilled pilots. The use of autonomous drones is still limited. Developing a fully autonomous solution is challenging because the drone needs to take decisions during the flight that are affected by conflicting goals: the drone needs to fly close to the power lines to maximize the data quality for visual inspection starting from a rough knowledge of the reference trajectory, and at the same time, it must avoid collisions with the power lines and masts, for which precise location information is unavailable.
 
 %How far has existing work come? What is the next frontier?
 State-of-the-art autonomous systems for power line inspection have two shortcomings:
 % (i) Trajectory planning is decoupled from perception and needs accurate information about the location of the power lines and masts; This information is only available in limited cases.
-(i) \iros{Control and motion planning are} separated from perception, and they also require precise information regarding the location of power lines and masts. This information is only available in limited cases.
-(ii) Collision avoidance and power line tracking are decoupled, which could lead to losing track of the power lines after successfully avoiding an obstacle.
-For further details, we refer the reader to a survey on autonomous, vision-based robotic inspection of power lines~\cite{jenssen2018automatic}.
+(i) \iros{Control and motion planning are} separated from perception, and they also require precise information regarding the location of power lines and masts. This information is only available in limited cases. (ii) Collision avoidance and power line tracking are decoupled, which could lead to losing track of the power lines after successfully avoiding an obstacle. For further details, we refer the reader to a survey on autonomous, vision-based robotic inspection of power lines~\cite{jenssen2018automatic}.
 
 %What does our paper contribute?
-We propose a vision-based, tightly-coupled perception and action solution for
-autonomous power line inspection that does not require prior information about the power line infrastructure, \iros{such as the  location of the power lines and masts}.
-Our method plans and tracks a trajectory that maximizes the visibility of the power line in the onboard-camera view and, at the same time, can safely avoid obstacles such as the power masts.
+We propose a vision-based, tightly-coupled perception and action solution for autonomous power line inspection that does not require prior information about the power line infrastructure, \iros{such as the  location of the power lines and masts}. Our method plans and tracks a trajectory that maximizes the visibility of the power line in the onboard-camera view and, at the same time, can safely avoid obstacles such as the power masts.
 %What is the key idea? Insights
-We achieve this by developing a perception-aware Model Predictive Controller (MPC)~\cite{Falanga18iros} that includes two perception objectives: one for line tracking and one for collision avoidance. 
-Adding multiple, and possibly conflicting, perception objectives in the MPC is a challenging task. 
-In particular, the optimization could become infeasible and computationally intractable on resource-constrained platforms such as quadrotors.
-We overcome this problem by letting the MPC optimize over the weights of the two perception objectives \emph{online}.
+We achieve this by developing a perception-aware Model Predictive Controller (MPC)~\cite{Falanga18iros} that includes two perception objectives: one for line tracking and one for collision avoidance. Adding multiple, and possibly conflicting, perception objectives in the MPC is a challenging task. In particular, the optimization could become infeasible and computationally intractable on resource-constrained platforms such as quadrotors. We overcome this problem by letting the MPC optimize over the weights of the two perception objectives \emph{online}.
 
 \iros{To detect the power lines, we propose a novel perception module that extends the deep-learning--based object detector in~\cite{redmon2016you} to the case of power line detection.}
 % The perception module responsible for line detection and tracking is based on a customized deep-learning--based object detector~\cite{redmon2016you}.
-The perception module is trained only on synthetic data and transfers zero-shot to real-world images of power lines without any fine-tuning. 
-In this way, we overcome the problem of the limited amount of annotated data for supervised learning.
+The perception module is trained only on synthetic data and transfers zero-shot to real-world images of power lines without any fine-tuning. In this way, we overcome the problem of the limited amount of annotated data for supervised learning.
 
 %What do the experiments say?
-We demonstrate our system both on simulated data and on a physical quadrotor platform operating in a mock-up power-line infrastructure. We show that our approach is capable of accurately tracking the power lines and avoiding the power masts starting from a rough reference trajectory. 
-We believe that our method will contribute to accelerating the deployment of autonomous drones for power line inspection. 
+We demonstrate our system both on simulated data and on a physical quadrotor platform operating in a mock-up power-line infrastructure. We show that our approach is capable of accurately tracking the power lines and avoiding the power masts starting from a rough reference trajectory. We believe that our method will contribute to accelerating the deployment of autonomous drones for power line inspection.
 % In addition, our system could inspire the development of novel perception-aware algorithms for autonomous quadrotor navigation.
 % \davide{Our contributions are:}
 Our main contributions are:
